@@ -1,0 +1,51 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+
+    h2 {
+        color: #fff;
+        text-align: center;
+        font-size: 35px;
+        position: relative;
+        border: 1px solid #fff;
+        width: 50%;
+        margin: 30px;
+        padding: 10px;
+    }
+}
+
+.checkbox {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    padding-right: 40px;
+
+    input {
+        width: 25px;
+        height: 25px;
+        border: none;
+        border-radius: 0;
+    }
+
+}
+.clear-data-btn {
+    bottom: 0;
+    margin-top: 150px;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+
+    button {
+        background: #191919;
+        color: #fff;
+        border: none;
+        padding: 20px;
+        font-size: 18px;
+        margin-top: 20px;
+        box-shadow: 0px 3px 6px rgba(19, 19, 19, .3);
+    }
+}

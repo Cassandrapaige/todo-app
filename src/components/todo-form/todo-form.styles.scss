@@ -1,0 +1,15 @@
+form {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+
+    .input {
+        width: 100%;
+        padding: 30px;
+        font-size: 22px;
+        outline: none;
+        border: none;
+        background: #191919;
+        color: #fff;
+    }
+}
