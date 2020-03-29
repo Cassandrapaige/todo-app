@@ -58,13 +58,14 @@ const Layout = () => {
 
     const deleteTodo = id => {
         const toDos = todos.filter(todo => todo.id !== id)
-        setTodos(toDos);
+        // setTodos(toDos);
+  console.log(todos)
     }
 
   return (
     <div className="container">
         <Colors handleClick = {updateColorTheme} pickedColor = {color}/>
-
+    
     <div>
         <h2>Goals</h2>
             <ListContainer 
@@ -96,7 +97,8 @@ const Layout = () => {
         </ListContainer>
       </div>  
 
-        <TodoForm addTodo={addTodo}> 
+    <div className="form">
+        <TodoForm addTodo={addTodo} /> 
             <div className="checkbox">
                 <label htmlFor="important">..but at least this is done.</label>
                 <input 
@@ -105,8 +107,8 @@ const Layout = () => {
                     checked = {checked}
                     onChange = {handleCheckboxChange} />
                     <span class="checkmark"/>
-            </div>
-        </TodoForm>
+                </div>
+        </div>
     </div>
   );
 }

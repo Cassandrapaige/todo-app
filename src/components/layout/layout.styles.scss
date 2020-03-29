@@ -13,25 +13,6 @@
         padding: 10px;
     }
 }
-
-.checkbox {
-    position: absolute;
-    bottom: 30px;
-    right: 30px;
-    color: #fff;
-    display: flex;
-    align-items: center;
-    font-size: 20px;
-    padding-right: 40px;
-
-    input {
-        width: 25px;
-        height: 25px;
-        border: none;
-        border-radius: 0;
-    }
-
-}
 .clear-data-btn {
     bottom: 0;
     margin-top: 150px;
