@@ -20,12 +20,12 @@ const ListContainer = ({todos, children, pickedColor, finishTodo, deleteTodo}) =
     return (
         <div className="todo-list-container" style = {{backgroundColor: pickedColor}}>
         {
-            todos.map((todo, index) => (
+            todos.map((todo, index, id) => (
         <TodoItem
             key={index}
             index={index}
             item={todo}
-            id={Math.random()}
+            id={id}
             finishTodo = {finishTodo}
             deleteTodo = {deleteTodo}
           />

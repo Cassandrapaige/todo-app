@@ -18,9 +18,13 @@
     }
 
     .buttons {
+        display: flex;
+        
         button {
             background: none;
             border: none;
+            outline: none;
+            
             .fas {
                 color: #fff;
                 font-size: 22px;

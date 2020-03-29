@@ -31,9 +31,10 @@ const Layout = () => {
     const [color, setColor] = useState('#F23D5D');
     const [filteredTodos, setFilteredTodos] = useState([])
 
-    const addTodo = todo => {
-        const newTodos = [...todos, {todo}];
-        const filteredList = [...filteredTodos, {todo}];
+    const addTodo = (todo, id) => {
+        id = Math.random();
+        const newTodos = [...todos, {todo , id}];
+        const filteredList = [...filteredTodos, {todo, id}];
 
         if(!checked) setTodos(newTodos);
         if(checked) setFilteredTodos(filteredList)
@@ -52,20 +53,21 @@ const Layout = () => {
         setColor(pickedColor)
     }
 
-    const finishTodo = event => {
-        console.log('ideally this would move your goal to the other list')
+    const finishTodo = id => {
+        const toDos = todos.filter(todo => todo.id !== id)
+        const finishedTodo = todos.filter(todo => todo.id == id);
+        setTodos(toDos);
+        setFilteredTodos([...filteredTodos, ...finishedTodo])
     }
 
     const deleteTodo = id => {
         const toDos = todos.filter(todo => todo.id !== id)
-        // setTodos(toDos);
-  console.log(todos)
+        setTodos(toDos);
     }
 
   return (
     <div className="container">
         <Colors handleClick = {updateColorTheme} pickedColor = {color}/>
-    
     <div>
         <h2>Goals</h2>
             <ListContainer 
@@ -83,8 +85,8 @@ const Layout = () => {
             <animated.div style= {props} className = 'clear-data-btn'>
             {filteredTodos.length == 0 ?
                 <span>You haven't {filteredTodos.length == 0 && todos.length === 0 ? 
-                            'set' 
-                            : 'completed' } any goals yet..</span> 
+                    'set' 
+                    : 'completed' } any goals yet..</span> 
             :
             <>
                 <span>Awesome. You've completed {filteredTodos.length} of your {todos.length + filteredTodos.length} goals for today!</span>
